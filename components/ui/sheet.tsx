@@ -60,8 +60,12 @@ export const SheetTrigger: FC<SheetTriggerProps> = ({ children }) => {
   };
 
   if (isValidElement(children)) {
-    return cloneElement(children as ReactElement, {
-      onClick: handleClick,
+    const child = children as ReactElement<{ onClick?: MouseEventHandler }>;
+    return cloneElement(child, {
+      onClick: (event: React.MouseEvent) => {
+        handleClick(event);
+        child.props.onClick?.(event);
+      },
     });
   }
 

@@ -10,7 +10,7 @@ export interface CardProps extends HTMLAttributes<HTMLDivElement> {
 export const Card: FC<CardProps> = ({ className, children, ...props }) => (
   <div
     className={cn(
-      "rounded-2xl border border-slate-800 bg-slate-950/80 text-slate-50",
+      "rounded-lg border bg-card text-card-foreground shadow-sm",
       className,
     )}
     {...props}
@@ -25,7 +25,7 @@ export const CardHeader: FC<CardProps> = ({
   ...props
 }) => (
   <div
-    className={cn("px-4 pt-4 pb-2 flex flex-col gap-1", className)}
+    className={cn("flex flex-col space-y-1.5 p-6", className)}
     {...props}
   >
     {children}
@@ -36,18 +36,36 @@ export const CardTitle: FC<{ className?: string; children: ReactNode }> = ({
   className,
   children,
 }) => (
-  <h3 className={cn("text-sm font-semibold tracking-tight", className)}>
+  <h3 className={cn("text-2xl font-semibold leading-none tracking-tight", className)}>
     {children}
   </h3>
 );
+
+export const CardDescription: FC<{ className?: string; children: ReactNode }> = ({
+    className,
+    children,
+  }) => (
+    <p className={cn("text-sm text-muted-foreground", className)}>
+      {children}
+    </p>
+  );
 
 export const CardContent: FC<CardProps> = ({
   className,
   children,
   ...props
 }) => (
-  <div className={cn("px-4 pb-4 pt-1", className)} {...props}>
+  <div className={cn("p-6 pt-0", className)} {...props}>
     {children}
   </div>
 );
 
+export const CardFooter: FC<CardProps> = ({
+    className,
+    children,
+    ...props
+  }) => (
+    <div className={cn("flex items-center p-6 pt-0", className)} {...props}>
+      {children}
+    </div>
+  );
