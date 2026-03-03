@@ -1,3 +1,0 @@
-module.exports=[33290,a=>{"use strict";var b=a.i(13167);function c({children:a}){return(0,b.jsx)("html",{lang:"en",className:"h-full scroll-smooth",children:(0,b.jsx)("body",{className:"h-full bg-slate-950 text-slate-50 antialiased",children:a})})}a.s(["default",()=>c,"metadata",0,{title:"Nexora · Applied AI Studio",description:"Nexora partners with modern teams across the Middle East and beyond to design, build, and scale AI-powered SaaS products."}])}];
-
-//# sourceMappingURL=app_layout_tsx_271801d7._.js.map
